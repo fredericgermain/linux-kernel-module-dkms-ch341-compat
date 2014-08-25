@@ -6,6 +6,8 @@ My example of doing a Linux Kernel Module (LKM) with Dynamic Kernel Module Suppo
 You can just insmod ./mymodule.ko after building and then rmmod
 mymodule. Use dmesg | tail to check log and lsmod to check if is loaded.
 
+DKMS can be done via Makefile, go read it or do it manually as per below.
+
 To use DKMS do it like so:
 
 	# ln -s `pwd` /usr/src/mymodule-1.0

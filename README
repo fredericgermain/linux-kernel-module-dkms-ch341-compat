@@ -1,0 +1,26 @@
+My example of doing a Linux Kernel Module (LKM) with Dynamic Kernel Module Support (DKMS).
+
+    To build: make -C $path_to_linux_headers M=`pwd` modules
+    To clean: make -C $path_to_linux_headers M=`pwd` clean
+
+You can just insmod ./mymodule.ko after building and then rmmod
+mymodule. Use dmesg | tail to check log and lsmod to check if is loaded.
+
+To use DKMS do it like so:
+
+	# ln -s `pwd` /usr/src/mymodule-1.0
+	# dkms add -m mymodule -v 1.0
+	# dkms install -m mymodule -v 1.0
+	
+To remove with DKMS:
+
+	# dkms remove -m mymodule -v 1.0 --all
+
+When installed with DKMS you can manually insert / remove the module  like this:
+
+	# insmod /lib/modules/$(uname -r)/updates/dkms/mymodule.ko
+	# modprobe mymodule
+
+	# rmmod mymodule
+
+And check dmesg / lsmod the same way as a raw build.

@@ -21,3 +21,11 @@
 *.i*86
 *.x86_64
 *.hex
+
+*.cmd
+.tmp_versions/
+Module.symvers
+modules.order
+ch341.d
+ch341.mod.c
+

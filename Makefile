@@ -1,6 +1,6 @@
 
-MY_MODULE=mymodule
-MY_VERSION=1.0
+MY_MODULE=ch341
+MY_VERSION=6.5.0
 
 obj-m = $(MY_MODULE).o
 
@@ -11,7 +11,7 @@ obj-m = $(MY_MODULE).o
 #
 DKMS_FLAGS= -m $(MY_MODULE) -v $(MY_VERSION) --sourcetree "`pwd`/.." $(USER_DKMS_FLAGS)
 
-# Because I don't want to name my git-repo like mymodule-1.0
+# Because I don't want to name my git-repo like ch341-6.5.0
 make_link:
 	ln -sf `pwd` `pwd`/../$(MY_MODULE)-$(MY_VERSION)
 
